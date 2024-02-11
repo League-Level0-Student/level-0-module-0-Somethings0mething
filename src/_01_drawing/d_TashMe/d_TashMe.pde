@@ -9,35 +9,45 @@
 // These 2 lines of code create variables to hold your face picture and a mustache.
 // You will use these later.
 PImage face;
-PImage mustache;
-
+PImage beard;
+int x = 0;
+int y = 0;
+boolean hasClicked = false;
 
 void setup() {
-  
+  size(1000, 750);
 // 2. The code below loads your face picture into the program. 
 //     Make sure the file name is correct for the face image you saved earlier
-face = loadImage("face.jpg");
-  
+face = loadImage("images.jpeg");
 // 3. Set the size of the sketch. Make it big enough to show the face you chose.
-
+face.resize(1000, 750);
+background(face);
 // 4. Resize the face so it is the same size as the sketch
 
 // 5. Drag and drop an image with a mustache onto this sketch. 
 //    Try to find one with a transparent background. Use the same idea as in step 1.
 //    Make sure the file name is correct for the mustache image you saved.  
-mustache = loadImage("mustache.png");
-
+beard = loadImage("Beard.png");
+beard.resize(250, 300);
   }
 
 void draw() {
-  
+  background(face);
 // 6. DRAW FACE.    Use the background() command to make the face the background of the sketch
 //    Run the program to see if the face is drawn. Get this working before you go on.
   
 
 // 7. DRAW MUSTACHE. Use the image() command to draw the mustache.  
 //                  The image command looks like this:
-image (mustache, 200,200);
+if (hasClicked == false) {
+image (beard, mouseX,mouseY);
+hasClicked = true;
+x = mouseX;
+y = mouseY;
+}
+else {
+  image (beard, x, y);
+}
 //    The numbers specify where to draw the mustache. They represent the top left corner of the image
 //    Run the program to see if the mustache is drawn on the face. Get this working before you go on.
 //    If you need to resize the mustache, do it in the setup() method after you loaded the mustache image.
