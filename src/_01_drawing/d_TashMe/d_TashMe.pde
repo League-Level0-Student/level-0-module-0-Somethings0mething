@@ -41,12 +41,15 @@ void draw() {
 //                  The image command looks like this:
 if (hasClicked == false) {
 image (beard, mouseX,mouseY);
-hasClicked = true;
+
 x = mouseX;
 y = mouseY;
 }
 else {
   image (beard, x, y);
+}
+if (mousePressed == true) {
+hasClicked = true;
 }
 //    The numbers specify where to draw the mustache. They represent the top left corner of the image
 //    Run the program to see if the mustache is drawn on the face. Get this working before you go on.
