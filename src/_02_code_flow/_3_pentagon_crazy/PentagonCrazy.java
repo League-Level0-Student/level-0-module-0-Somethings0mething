@@ -22,7 +22,7 @@ public class PentagonCrazy {
 		//  NUMBER OF SIDES. Make an int variable for the number of sides the shape will have.
 		//  				(Hint: its called PentagonCrazy)
 		int sides;
-		sides = 5;
+		sides = 2;
 		//  TURN ANGLE. Make another int variable for the angle the robot must turn. 
 		//  			Hint: Divide 360 by the number of sides the shape has to get the angle.
 		int angle;
