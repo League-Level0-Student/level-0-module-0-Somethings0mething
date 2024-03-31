@@ -23,17 +23,28 @@ public class StarShow {
 		// Remove the drawStar(150) from the program before you proceed.
 		
 		// Set the robot speed to 100
-
+		batman.setSpeed(100);
+		batman.penDown();
 		// Make a variable to hold the X position of the Robot and set it to 10
-
+		int xaxis = 10;
 		// Make a variable to hold the Y position of the Robot and set it to 600
-
+		int yaxis = 600;
 		// Make a variable to hold the star size and set it to 25
-	
+		int starSize = 25;
 		// Make a variable to count how many stars have been drawn and set it to 0
-
+		int starCount = 0;
 		// LOOP: Start a while loop to repeat the following code until 7 stars have been drawn
-
+		while (starCount <= 7) {
+			batman.setPenWidth(xaxis);
+			batman.setPenWidth(yaxis);
+			drawStar(starSize);
+			xaxis += 10;
+			yaxis -= 10;
+			starSize += 20;
+			batman.turn(12);
+			batman.setRandomPenColor();
+			starCount += 1;
+		}
 			// Set the pen width to the number of stars drawn so far
 
 			// Set the X position of the robot to your X variable
@@ -63,13 +74,18 @@ public class StarShow {
 
 	private void drawStar(int starSize) {
 		// Put the robot's pen down
-
+		batman.penDown();
     	// COUNT. Create an int variable that will count how many lines of the star we have drawn.
     	//        The start value will be zero because no lines have yet been drawn. Use this code:
 		  /**     int lines = 0;    **/
+		int starLines = 0;
 
 		// LOOP: Start a while loop to repeat the following code until 5 lines have been drawn
-
+		while (starLines <= 5) {
+			batman.move(starSize);
+			batman.turn(144);
+			starLines += 1;
+		}
 				// MOVE the robot the distance of the starSize variable
 
 				// TURN the robot 144 degrees
